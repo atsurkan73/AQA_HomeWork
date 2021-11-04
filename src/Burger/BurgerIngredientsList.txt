@@ -1,0 +1,3 @@
+KOTLETA - 50
+SOUSE   - 20
+CHEESE  - 30
