@@ -19,9 +19,9 @@ public class ListOfIngredients {
             fileReader.close();
         } catch (Exception e) {
             HashMap<String, Integer> inputMap = new HashMap<>();
-            inputMap.put("KOTLETA", 50);
-            inputMap.put("SOUSE", 20);
-            inputMap.put("CHEESE", 30);
+            inputMap.put("KOTLETA", 30);
+            inputMap.put("SOUSE", 10);
+            inputMap.put("CHEESE", 20);
 
             for (Map.Entry<String, Integer> entry : inputMap.entrySet()) {
                 System.out.println(i++ + ". " + entry.getKey() + " - " + entry.getValue());

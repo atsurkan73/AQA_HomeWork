@@ -1,10 +1,10 @@
 package Burger;
 
-import java.io.IOException;
+
+import static Burger.QuestionMoreIngredients.BASECOST;
 
 public class BurgerMain {
-    public static void main(String[] args) throws IOException {
-        int baseCost = 50;
+    public static void main(String[] args) {
 
         BonAppetit bonAppetit = new BonAppetit();
 
@@ -17,7 +17,7 @@ public class BurgerMain {
 
             CalculateMoreIngredients moreIngredients = new CalculateMoreIngredients();
 
-            int sumCost = moreIngredients.more(baseCost, more);
+            int sumCost = moreIngredients.more(BASECOST, more);
             if (QuestionMoreIngredients.continueOrder()) {
                 ListOfIngredients.listOfIngredients();
 

@@ -3,19 +3,20 @@ package Burger;
 public class QuestionMoreIngredients {
 
     static UserInput userInput;
+    public final static int BASECOST = 50;
 
     public static boolean yes() {
-        int baseCost = 50;
-        System.out.println("Базовая стоимость Бургера: " + baseCost);
+
+        System.out.println("Базовая стоимость Бургера: " + BASECOST);
         System.out.println("Заказать дополнительный ингредиент? Введите Y или N");
         userInput = new UserInput();
         String yesOrNo = userInput.input();
-                switch (yesOrNo) {
+        switch (yesOrNo) {
             case "Y":
                 System.out.println("\n" + "Выберите дополнительный ингредиент из списка: номер или название");
                 return true;
             case "N":
-                System.out.println("\n" + "Базовая стоимость Бургера: " + baseCost);
+                System.out.println("\n" + "Базовая стоимость Бургера: " + BASECOST);
                 return false;
             default:
                 System.out.println("\n" + "Ваш выбор не распознан");
