@@ -5,7 +5,10 @@ public class MainArrayExpand {
         int[] array = {1, 2, 3, 4, 5, 6};
         int number = 77;
 
-        new ArrayExp().toExp(array, number);
+        int[] newArray = new ArrayExp().toExp(array, number);
+
+        for (int i : newArray)
+            System.out.println(i);
 
     }
 }

@@ -1,7 +1,7 @@
 package ArrayExpand;
 
 public class ArrayExp {
-    public static void toExp(int array[], int num) {
+    public static int[] toExp(int array[], int num) {
         int i = 0;
         int[] newArray = new int[array.length + 1];
 
@@ -11,9 +11,7 @@ public class ArrayExp {
         }
         newArray[i] = num;
 
-        for (int ii : newArray) {
-            System.out.println(ii);
-
-        }
+        return newArray;
     }
 }
+
