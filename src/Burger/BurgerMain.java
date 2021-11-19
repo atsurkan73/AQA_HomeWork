@@ -1,31 +1,27 @@
 package Burger;
 
 
-import static Burger.QuestionMoreIngredients.BASECOST;
+import static Burger.MoreIngredients.*;//import static Burger.UserInput.bonAppetit;
 
 public class BurgerMain {
     public static void main(String[] args) {
 
-        BonAppetit bonAppetit = new BonAppetit();
-
-        if (!QuestionMoreIngredients.yes()) {
-            bonAppetit.wish();
+        if (!MoreIngredients.orderMore()) {
+            bonAppetit();
         } else {
-            ListOfIngredients.listOfIngredients();
+            ListOfIngredients.getList();
 
-            int more = SelectMoreIngredients.order();
+            int more = MoreIngredients.order();
 
-            CalculateMoreIngredients moreIngredients = new CalculateMoreIngredients();
+            int sumCost = calculateMoreIngredients(BASECOST, more);
+            if (MoreIngredients.orderMore()) {
+                ListOfIngredients.getList();
 
-            int sumCost = moreIngredients.more(BASECOST, more);
-            if (QuestionMoreIngredients.continueOrder()) {
-                ListOfIngredients.listOfIngredients();
-
-                moreIngredients.more(sumCost, SelectMoreIngredients.order());
-                bonAppetit.wish();
+                calculateMoreIngredients(sumCost, MoreIngredients.order());
+                bonAppetit();
             } else {
                 System.out.println("Суммарная стоимость бургера: " + sumCost);
-                bonAppetit.wish();
+                bonAppetit();
             }
         }
     }

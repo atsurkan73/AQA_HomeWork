@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ListOfIngredients {
-    public static void listOfIngredients() {
+
+    public static void getList() {
         int i = 1;
         try {
             FileReader fileReader = new FileReader("BurgerIngredientsList.txt");
@@ -18,13 +19,30 @@ public class ListOfIngredients {
             }
             fileReader.close();
         } catch (Exception e) {
-            HashMap<String, Integer> inputMap = new HashMap<>();
-            inputMap.put("KOTLETA", 30);
-            inputMap.put("SOUSE", 10);
-            inputMap.put("CHEESE", 20);
 
-            for (Map.Entry<String, Integer> entry : inputMap.entrySet()) {
-                System.out.println(i++ + ". " + entry.getKey() + " - " + entry.getValue());
+            {
+
+                HashMap<Integer, String> listOfIngrefients = new HashMap<>();
+                listOfIngrefients.put(1, "KOTLETA");
+                listOfIngrefients.put(2, "SOUSE");
+                listOfIngrefients.put(3, "CHEESE");
+
+                HashMap<String, Integer> priceOfIngrefients = new HashMap<>();
+                priceOfIngrefients.put("KOTLETA", 30);
+                priceOfIngrefients.put("SOUSE", 10);
+                priceOfIngrefients.put("CHEESE", 20);
+
+
+            {
+                for (Map.Entry<Integer, String> entry1 : listOfIngrefients.entrySet())
+
+                    for (Map.Entry<String, Integer> entry2 : priceOfIngrefients.entrySet())
+
+                            if (entry1.getValue().equals(entry2.getKey()))
+
+                                System.out.println(entry1.getKey() + ". " + " - " + " " + entry2.getKey() + " " + entry2.getValue());
+
+                }
             }
         }
     }
